@@ -2,9 +2,17 @@
 
 Javascript library for rolling dice. Supports strings written in a dice-rolling syntax, eg. "d12", "1d20", "4d6", "1d8+1".
 
+[See it in action!](http://michaelenger.github.io/diceroller.js/)
+
 ## Usage
 
-Include the `diceroller.js` file and use the `diceroller` object to roll dice.
+Download and include the `diceroller.js` file somewhere in your HTML page (preferably at the bottom).
+
+```html
+<script src="diceroller.js"></script>
+```
+
+Now use the `diceroller` object to roll dice.
 
 ```javascript
 diceroller.roll(20); // roll a 20-sided die
@@ -23,7 +31,7 @@ diceroller.roll('2d8+1'); // result: [4, 6, 1]
 The dice roller will roll a 6-sided die if no dice is specified and defaults to having verbose output off, but this can be modified by setting the appropriate variables.
 
 ```javascript
-diceroller.defaultDie = 20; // will roll a 20-sided die if no parameter is passed to roll()
+diceroller.defaultDie = 6; // will roll a 20-sided die if no parameter is passed to roll()
 diceroller.verboseOutput = true; // will always return an array of results unless false is passed as the second parameter
 ```
 
