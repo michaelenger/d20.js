@@ -1,5 +1,5 @@
 /**
- * diceroller.js
+ * d20.js
  *
  * Javascript library for rolling dice. Supports strings written in a dice-rolling syntax, eg. "d20", "4d6", "1d8+1".
  *
@@ -9,7 +9,7 @@
 (function() {
 "use strict";
 
-var diceroller = {
+var d20 = {
 
 	/**
 	 * Default dice to roll.
@@ -84,6 +84,6 @@ var diceroller = {
 };
 
 if (typeof window != 'undefined')
-	window.diceroller = diceroller;
+	window.d20 = d20;
 
 })();

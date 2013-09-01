@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>diceroller.js</title>
+		<title>d20.js</title>
 		<link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
 		<style>
 		footer { margin: 2em 0 1em; }
@@ -12,7 +12,7 @@
 	<body>
 		<div class="container">
 			<header>
-				<h1>diceroller.js</h1>
+				<h1>d20.js</h1>
 				<p>Javascript library for rolling dice. Supports strings written in a dice-rolling syntax, eg. "d20", "4d6", "1d8+1".</p>
 			</header>
 			<section id="basic" class="example">
@@ -20,9 +20,9 @@
 				<p>Send the method a number to get a random number between 1 and said number.</p>
 				<div class="row">
 					<div class="span6">
-						<pre class="code">diceroller.roll(6);
-diceroller.roll(12);
-diceroller.roll(20);</pre>
+						<pre class="code">d20.roll(6);
+d20.roll(12);
+d20.roll(20);</pre>
 						<a class="btn btn-primary" href=".">Run It</a>
 					</div>
 					<div class="span6">
@@ -35,9 +35,9 @@ diceroller.roll(20);</pre>
 				<p>You can use a dice syntax to determine the amount of dice to roll as well as adding modifiers.</p>
 				<div class="row">
 					<div class="span6">
-						<pre class="code">diceroller.roll('4d6');
-diceroller.roll('d12+1');
-diceroller.roll('4d20-10');</pre>
+						<pre class="code">d20.roll('4d6');
+d20.roll('d12+1');
+d20.roll('4d20-10');</pre>
 						<a class="btn btn-primary" href=".">Run It</a>
 					</div>
 					<div class="span6">
@@ -50,9 +50,9 @@ diceroller.roll('4d20-10');</pre>
 				<p>Use the "verbose output" option to get an ordered list of all the dice results instead of a single value.</p>
 				<div class="row">
 					<div class="span6">
-						<pre class="code">diceroller.roll(6, true);
-diceroller.roll('d12+1', true);
-diceroller.roll('4d20', true);</pre>
+						<pre class="code">d20.roll(6, true);
+d20.roll('d12+1', true);
+d20.roll('4d20', true);</pre>
 						<a class="btn btn-primary" href=".">Run It</a>
 					</div>
 					<div class="span6">
@@ -62,12 +62,12 @@ diceroller.roll('4d20', true);</pre>
 			</section>
 			<footer class="muted">
 				<a href="http://thelonelycoder.com">I made this ♥</a>
-				<a href="https://github.com/michaelenger/diceroller.js"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+				<a href="https://github.com/michaelenger/d20.js"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
 			</footer>
 		</div>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script src="diceroller.js"></script>
+		<script src="d20.js"></script>
 		<script>
 		jQuery(document).ready(function() {
 			function runExample(type) {
@@ -75,22 +75,22 @@ diceroller.roll('4d20', true);</pre>
 
 				switch (type) {
 					case 'basic':
-						result = diceroller.roll(6);
-						result += "<br>" + diceroller.roll(12);
-						result += "<br>" + diceroller.roll(20);
+						result = d20.roll(6);
+						result += "<br>" + d20.roll(12);
+						result += "<br>" + d20.roll(20);
 					break;
 					case 'syntax':
-						result = diceroller.roll('4d6');
-						result += "<br>" + diceroller.roll('d12+1');
-						result += "<br>" + diceroller.roll('4d20-10');
+						result = d20.roll('4d6');
+						result += "<br>" + d20.roll('d12+1');
+						result += "<br>" + d20.roll('4d20-10');
 					break;
 					case 'verbose':
 						var list;
-						list = diceroller.roll(6, true);
+						list = d20.roll(6, true);
 						result = list.join(' ');
-						list = diceroller.roll('d12+1', true);
+						list = d20.roll('d12+1', true);
 						result += '<br>' + list.join(' ');
-						list = diceroller.roll('4d20', true);
+						list = d20.roll('4d20', true);
 						result += '<br>' + list.join(' ');
 					break;
 					default:
