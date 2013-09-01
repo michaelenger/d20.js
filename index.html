@@ -3,29 +3,31 @@
 	<head>
 		<meta charset="utf-8">
 		<title>d20.js</title>
-		<link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+		<link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
 		<style>
-		footer { margin: 2em 0 1em; }
+		footer { margin: 2em 0 1em; text-align: center; }
 		footer a { color: inherit; }
+		input[type=text] { margin-bottom: 0.25em; }
 		</style>
 	</head>
 	<body>
 		<div class="container">
-			<header>
+			<header class="page-header">
 				<h1>d20.js</h1>
-				<p>Javascript library for rolling dice. Supports strings written in a dice-rolling syntax, eg. "d20", "4d6", "1d8+1".</p>
+				<p class="lead">Javascript library for rolling dice. Supports strings written in a dice-rolling syntax, eg. "d20", "4d6", "1d8+1".</p>
+				<a class="btn btn-primary btn-lg" href="https://github.com/michaelenger/d20.js">Download from GitHub</a>
 			</header>
 			<section id="basic" class="example">
 				<h2>Basic Usage</h2>
 				<p>Send the method a number to get a random number between 1 and said number.</p>
 				<div class="row">
-					<div class="span6">
+					<div class="col-sm-6">
 						<pre class="code">d20.roll(6);
 d20.roll(12);
 d20.roll(20);</pre>
-						<a class="btn btn-primary" href=".">Run It</a>
+						<a class="btn btn-default" href=".">Run Example</a>
 					</div>
-					<div class="span6">
+					<div class="col-sm-6">
 						<div class="results well"></div>
 					</div>
 				</div>
@@ -34,13 +36,13 @@ d20.roll(20);</pre>
 				<h2>Dice Syntax</h2>
 				<p>You can use a dice syntax to determine the amount of dice to roll as well as adding modifiers.</p>
 				<div class="row">
-					<div class="span6">
+					<div class="col-sm-6">
 						<pre class="code">d20.roll('4d6');
 d20.roll('d12+1');
 d20.roll('4d20-10');</pre>
-						<a class="btn btn-primary" href=".">Run It</a>
+						<a class="btn btn-default" href=".">Run Example</a>
 					</div>
-					<div class="span6">
+					<div class="col-sm-6">
 						<div class="results well"></div>
 					</div>
 				</div>
