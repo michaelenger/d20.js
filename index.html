@@ -51,19 +51,40 @@ d20.roll('4d20-10');</pre>
 				<h2>Verbose Output</h2>
 				<p>Use the "verbose output" option to get an ordered list of all the dice results instead of a single value.</p>
 				<div class="row">
-					<div class="span6">
+					<div class="col-sm-6">
 						<pre class="code">d20.roll(6, true);
 d20.roll('d12+1', true);
 d20.roll('4d20', true);</pre>
-						<a class="btn btn-primary" href=".">Run It</a>
+						<a class="btn btn-default" href=".">Run Example</a>
 					</div>
-					<div class="span6">
+					<div class="col-sm-6">
 						<div class="results well"></div>
 					</div>
 				</div>
 			</section>
-			<footer class="muted">
-				<a href="http://thelonelycoder.com">I made this ♥</a>
+			<section id="custom" class="example">
+				<h2>Try it yourself!</h2>
+				<p>Write down some dice rolls to see the results.</p>
+				<div class="row">
+					<div class="col-sm-6">
+						<form>
+							<input type="text" class="form-control" name="input" placeholder="Example: d20, 4d6+2">
+							<a class="btn btn-default" href=".">Run Example</a>
+							<label>
+								<input type="checkbox" name="verbose" value="1">
+								Verbose output
+							</label>
+						</form>
+					</div>
+					<div class="col-sm-6">
+						<div class="results well"></div>
+					</div>
+				</div>
+			</section>
+			<footer class="text-muted">
+				<a href="http://michaelenger.github.io/">I made this ♥</a>
+				&middot;
+				<a href="http://michaelenger.github.io/rpgdicebag/">See it in action!</a>
 				<a href="https://github.com/michaelenger/d20.js"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
 			</footer>
 		</div>
@@ -95,6 +116,24 @@ d20.roll('4d20', true);</pre>
 						list = d20.roll('4d20', true);
 						result += '<br>' + list.join(' ');
 					break;
+					case 'custom':
+						var value = $('#custom input[name=input]').val(),
+							verbose = $('#custom input[name=verbose]').is(':checked');
+						if (value.search(' ') != -1) {
+							values = value.split(' ');
+						} else {
+							values = [value];
+						}
+
+						result = '';
+						for (var i in values) {
+							temp = d20.roll(values[i], verbose);
+							if (verbose) {
+								temp = temp.join(' ');
+							}
+							result += (result != '' ? '<br>' : '') + temp
+						}
+					break;
 					default:
 						alert('I can smell your breath from here..');
 				}
@@ -105,6 +144,10 @@ d20.roll('4d20', true);</pre>
 			jQuery('.example .btn').on('click', function(e) {
 				e.preventDefault();
 				runExample($(this).parents('.example').attr('id'));
+			});
+			jQuery('#custom form').on('submit', function(e) {
+				e.preventDefault();
+				runExample('custom');
 			});
 
 			runExample('basic');
