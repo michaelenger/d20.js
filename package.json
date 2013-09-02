@@ -1,0 +1,23 @@
+{
+  "name": "d20.js",
+  "version": "1.0.0",
+  "description": "Library for rolling dice based on dice-syntax used in RPGs.",
+  "main": "d20.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/michaelenger/d20.js.git"
+  },
+  "keywords": [
+    "dice",
+    "rpg",
+    "d20"
+  ],
+  "author": "Michael Enger",
+  "license": "ZLIB",
+  "bugs": {
+    "url": "https://github.com/michaelenger/d20.js/issues"
+  }
+}

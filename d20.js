@@ -83,7 +83,12 @@ var d20 = {
 	}
 };
 
-if (typeof window != 'undefined')
+if (typeof window != 'undefined') {
 	window.d20 = d20;
+} else if (typeof exports != 'undefined') {
+	for (var k in d20) {
+		exports[k] = d20[k];
+	}
+}
 
 })();

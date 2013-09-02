@@ -4,13 +4,31 @@ Javascript library for rolling dice. Supports strings written in a dice-rolling 
 
 [See it in action!](http://michaelenger.github.io/d20.js/)
 
-## Usage
+## Installation
 
-Download and include the `d20.js` file somewhere in your HTML page (preferably at the bottom).
+### As part of a web app
+
+Download and include the `d20.js` file somewhere in your HTML page.
 
 ```html
 <script src="d20.js"></script>
 ```
+
+### As a Node.js module
+
+Clone the repository into your `~/.node_modules` folder.
+
+```
+git clone git@github.com:michaelenger/d20.js.git ~/.node_modules/d20.js
+```
+
+Include it into your app.
+
+```javascript
+d20 = include('d20.js');
+```
+
+## Usage
 
 Now use the `d20` object to roll dice.
 
