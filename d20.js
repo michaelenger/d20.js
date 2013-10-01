@@ -60,7 +60,7 @@ var d20 = {
 		var num = 0,
 			result = [];
 		for (var i = 0; i < amount; i++) {
-			num = Math.round(Math.random() * (dice - 1) + 1);
+			num = Math.floor(Math.random() * dice + 1);
 			result.push(num);
 		}
 
