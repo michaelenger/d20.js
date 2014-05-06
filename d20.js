@@ -41,7 +41,7 @@ var d20 = {
 		verbose = verbose || this.verboseOutput;
 
 		if (typeof dice == 'string') {
-			var result = dice.match(/^(\d+)?d(\d+)([+-]\d+)?$/);
+			var result = dice.match(/^\s*(\d+)?\s*d\s*(\d+)\s*([+-]\s*\d+)?\s*$/);
 			if (result) {
 				if (result[1]) {
 					amount = parseInt(result[1]);
@@ -50,7 +50,7 @@ var d20 = {
 					dice = parseInt(result[2]);
 				}
 				if (result[3]) {
-					mod = parseInt(result[3]);
+					mod = parseInt(result[3].replace(/\s/, ""));
 				}
 			} else {
 				parseInt(dice);

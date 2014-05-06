@@ -64,6 +64,21 @@
 			var result = d20.roll('5d10+2', true);
 			expect(result.length).toBe(6);
 		});
+
+		it('doesn\'t care about spaces', function() {
+			var result = d20.roll(' 2 d 8 + 1');
+			expect(result).toBeGreaterThan(2);
+			expect(result).toBeLessThan(18);
+		});
+
+		it('should be consistent', function() {
+			var result;
+			for (var i = 0; i < 100; i++) {
+				result = d20.roll('d6');
+				expect(result).toBeGreaterThan(0);
+				expect(result).toBeLessThan(7);
+			}
+		});
 	});
 
 })();
