@@ -38,12 +38,12 @@ d20.roll('4d6'); // roll four 6-sided dice
 d20.roll('2d8+1'); // roll two 8-sided dice and add 1 to the result
 ```
 
-You can get the result as an array of values rather than a single result if you set the verbose parameter to `true`.
+You can get the result as an array of values rather than a single result if you pass `true` along as the second parameter. Note that the results will be sorted in ascending order except for the modifiers which will be in their order of apperance.
 
 ```javascript
 d20.roll(20, true); // result: [16]
 d20.roll('4d6', true); // result: [1, 2, 4, 4]
-d20.roll('2d8+1'); // result: [4, 6, 1]
+d20.roll('2d8+1', true); // result: [4, 6, 1]
 ```
 
 The dice roller will roll a 6-sided die if no dice is specified and defaults to having verbose output off, but this can be modified by setting the appropriate variables.
@@ -51,6 +51,15 @@ The dice roller will roll a 6-sided die if no dice is specified and defaults to 
 ```javascript
 d20.defaultDie = 6; // will roll a 6-sided die if no parameter is passed to roll()
 d20.verboseOutput = true; // will always return an array of results unless false is passed as the second parameter
+```
+
+## Testing
+
+The library can be tested by installing the dependencies and running `npm test`:
+
+```bash
+npm install
+npm test
 ```
 
 ## License
