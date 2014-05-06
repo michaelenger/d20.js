@@ -1,6 +1,6 @@
 # d20.js
 
-Javascript library for rolling dice. Supports strings written in a dice-rolling syntax, eg. "d12", "1d20", "4d6", "1d8+1".
+Javascript library for rolling RPG dice. Supports dice notation such as "4d6" and "d20+2".
 
 [See it in action!](http://michaelenger.github.io/d20.js/)
 
