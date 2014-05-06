@@ -36,6 +36,7 @@ Now use the `d20` object to roll dice.
 d20.roll(20); // roll a 20-sided die
 d20.roll('4d6'); // roll four 6-sided dice
 d20.roll('2d8+1'); // roll two 8-sided dice and add 1 to the result
+d20.roll('1d8 +1 +2 -20'); // roll an 8-sided die which won't do you much good
 ```
 
 You can get the result as an array of values rather than a single result if you pass `true` along as the second parameter. Note that the results will be sorted in ascending order except for the modifiers which will be in their order of apperance.
@@ -44,6 +45,7 @@ You can get the result as an array of values rather than a single result if you 
 d20.roll(20, true); // result: [16]
 d20.roll('4d6', true); // result: [1, 2, 4, 4]
 d20.roll('2d8+1', true); // result: [4, 6, 1]
+d20.roll('1d8 +1 +2 -20', true); // result: [-16]
 ```
 
 The dice roller will roll a 6-sided die if no dice is specified and defaults to having verbose output off, but this can be modified by setting the appropriate variables.
@@ -64,7 +66,7 @@ npm test
 
 ## License
 
-Copyright (c) 2013 The Lonely Coder
+Copyright (c) 2014 Michael Enger
 
 This software is provided 'as-is', without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.
 

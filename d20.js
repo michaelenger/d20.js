@@ -36,12 +36,13 @@ var d20 = {
 	 */
 	roll: function(dice, verbose) {
 		var amount = 1,
-			mod = 0
+			mod = 0,
+			modifiers;
 		dice = dice || this.defaultDie;
 		verbose = verbose || this.verboseOutput;
 
 		if (typeof dice == 'string') {
-			var result = dice.match(/^\s*(\d+)?\s*d\s*(\d+)\s*([+-]\s*\d+)?\s*$/);
+			var result = dice.match(/^\s*(\d+)?\s*d\s*(\d+)\s*(.*?)\s*$/);
 			if (result) {
 				if (result[1]) {
 					amount = parseInt(result[1]);
@@ -50,7 +51,10 @@ var d20 = {
 					dice = parseInt(result[2]);
 				}
 				if (result[3]) {
-					mod = parseInt(result[3].replace(/\s/, ""));
+					modifiers = result[3].match(/([+-]\s*\d+)/g);
+					for (var i = 0; i < modifiers.length; i++) {
+						mod += parseInt(modifiers[i].replace(/\s/g, ""));
+					}
 				}
 			} else {
 				parseInt(dice);
