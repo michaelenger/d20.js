@@ -8,7 +8,15 @@ Javascript library for rolling RPG dice. Supports dice notation such as "4d6" an
 
 ### As part of a web app
 
-Download and include the `d20.js` file somewhere in your HTML page.
+You can install the library via [Bower](http://bower.io/).
+
+```bash
+bower install d20.js
+```
+
+Alternatively you can download the file directly from [GitHub](https://github.com/michaelenger/d20.js).
+
+Once you have the file you need to include the `d20.js` file somewhere in your HTML page.
 
 ```html
 <script src="d20.js"></script>
