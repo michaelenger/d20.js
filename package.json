@@ -1,6 +1,6 @@
 {
   "name": "d20.js",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Library for rolling dice based on dice-syntax used in RPGs.",
   "main": "d20.js",
   "scripts": {
