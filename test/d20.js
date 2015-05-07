@@ -49,12 +49,12 @@
 		});
 
 		it('allows you to get all the dice rolls as output', function() {
-			var result = d20.roll('5d10', true);
+			var result = d20.verboseRoll('5d10');
 			expect(result.length).toBe(5);
 		});
 
 		it('will append the modifier to the end of the result list', function() {
-			var result = d20.roll('5d10+2', true);
+			var result = d20.verboseRoll('5d10+2');
 			expect(result.length).toBe(6);
 		});
 

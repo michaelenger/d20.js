@@ -14,15 +14,36 @@ var d20 = {
 	/**
 	 * Roll a number of dice and return the result.
 	 *
-	 * @param dice    Type of dice to roll, can be represented in various formats:
-	 *                 - a number (6, 12, 42)
-	 *                 - dice syntax (d20, 4d6, 2d8+2)
-	 * @param verbose Returns the full amount of dice results rather than a single one
-	 * @return number
+	 * @param dice Type of dice to roll, can be represented in various formats:
+	 *               - a number (6, 12, 42)
+	 *               - dice syntax (d20, 4d6, 2d8+2)
+	 * @return Number
 	 */
-	roll: function(dice, verbose) {
+	roll: function(dice) {
+		var result = d20.verboseRoll(dice),
+			num = 0;
+
+		for (var i in result) {
+			num += result[i];
+		}
+
+		return num;
+	},
+
+	/**
+	 * Roll a number of dice and return the result as an array.
+	 *
+	 * @param dice Type of dice to roll, can be represented in various formats:
+	 *               - a number (6, 12, 42)
+	 *               - dice syntax (d20, 4d6, 2d8+2)
+	 * @return Array
+	 */
+	verboseRoll: function(dice) {
 		var amount = 1,
 			mod = 0,
+			results = [],
+			match,
+			num,
 			modifiers;
 
 		if (!dice) {
@@ -30,18 +51,18 @@ var d20 = {
 		}
 
 		if (typeof dice == 'string') {
-			var result = dice.match(/^\s*(\d+)?\s*d\s*(\d+)\s*(.*?)\s*$/);
-			if (result) {
-				if (result[1]) {
-					amount = parseInt(result[1]);
+			match = dice.match(/^\s*(\d+)?\s*d\s*(\d+)\s*(.*?)\s*$/);
+			if (match) {
+				if (match[1]) {
+					amount = parseInt(match[1]);
 				}
-				if (result[2]) {
-					dice = parseInt(result[2]);
+				if (match[2]) {
+					dice = parseInt(match[2]);
 				}
-				if (result[3]) {
-					modifiers = result[3].match(/([+-]\s*\d+)/g);
+				if (match[3]) {
+					modifiers = match[3].match(/([+-]\s*\d+)/g);
 					for (var i = 0; i < modifiers.length; i++) {
-						mod += parseInt(modifiers[i].replace(/\s/g, ""));
+						mod += parseInt(modifiers[i].replace(/\s/g, ''));
 					}
 				}
 			} else {
@@ -49,29 +70,19 @@ var d20 = {
 			}
 		}
 
-		var num = 0,
-			result = [];
 		for (var i = 0; i < amount; i++) {
 			num = Math.floor(Math.random() * dice + 1);
-			result.push(num);
+			results.push(num);
 		}
 
-		result = result.sort(function(a, b) {
+		results = results.sort(function(a, b) {
 			return a - b;
 		});
 		if (mod != 0) {
-			result.push(mod);
+			results.push(mod);
 		}
 
-		if (!verbose) {
-			num = 0;
-			for (var i in result) {
-				num += result[i];
-			}
-			result = num;
-		}
-
-		return result;
+		return results;
 	}
 };
 
