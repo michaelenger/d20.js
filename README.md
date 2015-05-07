@@ -19,7 +19,7 @@ Add the git repository as a dependency in your `package.json` file (you can spec
 ```javascript
 {
 	"dependencies": {
-		"d20.js": "git://github.com/michaelenger/d20.js.git#master"
+		"d20": "git://github.com/michaelenger/d20.js.git#master"
 	}
 }
 ```
@@ -27,7 +27,7 @@ Add the git repository as a dependency in your `package.json` file (you can spec
 `require` it in your app.
 
 ```javascript
-var d20 = require('d20.js');
+var d20 = require('d20');
 ```
 
 ## Usage
