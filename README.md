@@ -50,13 +50,6 @@ d20.roll('2d8+1', true);
 d20.roll('1d8 +1 +2 -20', true);
 ```
 
-The dice roller will roll a 6-sided die if no dice is specified and defaults to having verbose output off, but this can be modified by setting the appropriate variables.
-
-```javascript
-d20.defaultDie = 6; // will roll a 6-sided die if no parameter is passed to roll()
-d20.verboseOutput = true; // will always return an array of results unless false is passed as the second parameter
-```
-
 ## Testing
 
 The library can be tested by installing the dependencies and running `npm test`:

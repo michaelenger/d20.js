@@ -12,20 +12,6 @@
 var d20 = {
 
 	/**
-	 * Default dice to roll.
-	 *
-	 * @var number
-	 */
-	defaultDie: 6,
-
-	/**
-	 * Default setting for the verbose parameter.
-	 *
-	 * @var boolean
-	 */
-	verboseOutput: false,
-
-	/**
 	 * Roll a number of dice and return the result.
 	 *
 	 * @param dice    Type of dice to roll, can be represented in various formats:
@@ -38,8 +24,10 @@ var d20 = {
 		var amount = 1,
 			mod = 0,
 			modifiers;
-		dice = dice || this.defaultDie;
-		verbose = verbose || this.verboseOutput;
+
+		if (!dice) {
+			throw new Error('Missing dice parameter.');
+		}
 
 		if (typeof dice == 'string') {
 			var result = dice.match(/^\s*(\d+)?\s*d\s*(\d+)\s*(.*?)\s*$/);

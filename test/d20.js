@@ -42,17 +42,10 @@
 			expect(result).toBeLessThan(28);
 		});
 
-		it('will roll a 6-sided die if no value is passed', function() {
-			var result = d20.roll();
-			expect(result).toBeGreaterThan(0);
-			expect(result).toBeLessThan(7);
-		});
-
-		it('allows you to specify the default value', function() {
-			d20.defaultDie = 20;
-			var result = d20.roll();
-			expect(result).toBeGreaterThan(0);
-			expect(result).toBeLessThan(21);
+		it('will throw an exception if no value is passed', function() {
+			expect(function() {
+				d20.roll();
+			}).toThrow('Missing dice parameter');
 		});
 
 		it('allows you to get all the dice rolls as output', function() {
