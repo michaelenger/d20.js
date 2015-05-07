@@ -14,14 +14,10 @@ Download the files from [GitHub](https://github.com/michaelenger/d20.js) and inc
 
 ### As a Node.js module
 
-Add the git repository as a dependency in your `package.json` file (you can specify a version branch instead of "master" if you want a specific version).
+Install via `npm`.
 
-```javascript
-{
-	"dependencies": {
-		"d20": "git://github.com/michaelenger/d20.js.git#master"
-	}
-}
+```shell
+npm install d20
 ```
 
 `require` it in your app.
