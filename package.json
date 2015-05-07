@@ -16,7 +16,7 @@
     "d20"
   ],
   "author": "Michael Enger",
-  "license": "ZLIB",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/michaelenger/d20.js/issues"
   },

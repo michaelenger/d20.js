@@ -4,7 +4,7 @@
  * Javascript library for rolling dice. Supports strings written in a dice-rolling syntax, eg. "d20", "4d6", "1d8+1".
  *
  * @author Michael Enger <mike@thelonelycoder.com>
- * @licence ZLIB
+ * @licence MIT
  */
 (function() {
 "use strict";
