@@ -3,6 +3,9 @@
   "version": "1.2.1",
   "description": "Library for rolling dice based on dice-syntax used in RPGs.",
   "main": "d20.js",
+  "bin": {
+    "d20": "./bin/d20"
+  },
   "scripts": {
     "test": "./node_modules/.bin/mocha -R spec"
   },
@@ -23,5 +26,8 @@
   "devDependencies": {
     "mocha": "^1.18.2",
     "expect": "^0.1.1"
+  },
+  "dependencies": {
+    "commander": "^2.8.1"
   }
 }

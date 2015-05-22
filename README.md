@@ -26,6 +26,21 @@ npm install d20
 var d20 = require('d20');
 ```
 
+### As a standalone tool
+
+Install it globally.
+
+```shell
+npm install -g d20
+```
+
+Run the `d20` command with any number of desired dice rolls after.
+
+```shell
+d20 4d6
+d20 d20 1d8+1 d4
+```
+
 ## Usage
 
 Both methods of using the library provides a `d20` object with the `roll()` method which is used to roll dice.

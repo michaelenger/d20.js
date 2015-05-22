@@ -1,0 +1,39 @@
+#!/usr/bin/env node
+
+var d20 = require('..'),
+	program = require('commander'),
+	settings = require('../package.json');
+
+function performRoll(command) {
+	var total = 0,
+		output = '',
+		result = d20.verboseRoll(command);
+
+	for (var j = 0; j < result.length; j++) {
+		total += result[j];
+		output += (output.length ? ' ' : '') + result[j];
+	}
+
+	console.log(total + ' (' + output + ')');
+
+	return total;
+}
+
+program
+	.version(settings.version)
+	.description(settings.description)
+	.usage('[dice-rolls ...]')
+	.on('--help', function(){
+		console.log('  Examples:');
+		console.log('');
+		console.log('    $ d20 4d6');
+		console.log('    $ d20 d20 1d8+1 d4');
+		console.log('');
+	})
+	.parse(process.argv);
+
+if (program.args.length) {
+	program.args.forEach(performRoll);
+} else {
+	performRoll('d20');
+}
