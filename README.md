@@ -43,6 +43,8 @@ d20 d20 1d8+1 d4
 
 ## Usage
 
+### As a library
+
 Both methods of using the library provides a `d20` object with the `roll()` method which is used to roll dice.
 
 ```javascript
@@ -59,6 +61,26 @@ d20.roll(20, true);
 d20.roll('4d6', true);
 d20.roll('2d8+1', true);
 d20.roll('1d8 +1 +2 -20', true);
+```
+
+### As a standalone tool
+
+The standalone tool takes any number of dice roll commands and will return each one separately.
+
+```shell
+d20 4d6 2d8 d10
+```
+
+If you want more verbose output (full list of results per dice), you can use the `--verbose` option.
+
+```shell
+d20 --verbose 3d12
+```
+
+If you add the `--total` option, it will return the sum of all the dice rolls.
+
+```shell
+d20 --total d20 1d8+1 d4
 ```
 
 ## Testing

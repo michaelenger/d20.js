@@ -14,7 +14,11 @@ function performRoll(command) {
 		output += (output.length ? ' ' : '') + result[j];
 	}
 
-	console.log(total + ' (' + output + ')');
+	if (program.verbose) {
+		console.log(total + ' (' + output + ')');
+	} else if (!program.total) {
+		console.log(total);
+	}
 
 	return total;
 }
@@ -22,18 +26,31 @@ function performRoll(command) {
 program
 	.version(settings.version)
 	.description(settings.description)
-	.usage('[dice-rolls ...]')
+	.option('-v, --verbose', 'Show verbose output (full list of results)')
+	.option('-t, --total', 'Combine all rolls into a single total')
+	.usage('[options] [dice-rolls ...]')
 	.on('--help', function(){
 		console.log('  Examples:');
 		console.log('');
 		console.log('    $ d20 4d6');
 		console.log('    $ d20 d20 1d8+1 d4');
+		console.log('    $ d20 -v 2d10');
 		console.log('');
 	})
 	.parse(process.argv);
 
 if (program.args.length) {
-	program.args.forEach(performRoll);
+	if (program.total) {
+		var total = 0;
+
+		for (var i = 0; i < program.args.length; i++) {
+			total += performRoll(program.args[i]);
+		}
+
+		console.log(total);
+	} else {
+		program.args.forEach(performRoll);
+	}
 } else {
 	performRoll('d20');
 }
