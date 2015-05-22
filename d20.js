@@ -86,7 +86,23 @@ var d20 = {
 	}
 };
 
-if (typeof window != 'undefined') {
+if (!module.parent) {
+	var param = process.argv[process.argv.length - 1],
+		total = 0,
+		output = '',
+		result;
+
+	if (param.match(/d20.js$/i)) {
+		console.log('Usage: d20 [command]');
+	} else {
+		result = d20.verboseRoll(param);
+		for (var i = 0; i < result.length; i++) {
+			total += result[i];
+			output += result[i] + ' ';
+		}
+		console.log(output + ': ' + total);
+	}
+} else if (typeof window != 'undefined') {
 	window.d20 = d20;
 } else if (typeof exports != 'undefined') {
 	for (var k in d20) {
