@@ -17,7 +17,8 @@ var d20 = {
 	 * @param dice Type of dice to roll, can be represented in various formats:
 	 *               - a number (6, 12, 42)
 	 *               - dice syntax (d20, 4d6, 2d8+2)
-	 * @return Array or Number
+     * @param verbose Whether or not all dice rolls should be returned as an array
+	 * @return Number|Array
 	 */
 	roll: function(dice, verbose) {
 		var result = d20.verboseRoll(dice),
