@@ -17,17 +17,21 @@ var d20 = {
 	 * @param dice Type of dice to roll, can be represented in various formats:
 	 *               - a number (6, 12, 42)
 	 *               - dice syntax (d20, 4d6, 2d8+2)
-	 * @return Number
+	 * @return Array or Number
 	 */
-	roll: function(dice) {
+	roll: function(dice, verbose) {
 		var result = d20.verboseRoll(dice),
 			num = 0;
 
-		for (var i in result) {
-			num += result[i];
-		}
+        if(verbose) {
+            return result;
+        } else {
+            for (var i in result) {
+                num += result[i];
+            }
 
-		return num;
+            return num;
+        }
 	},
 
 	/**
