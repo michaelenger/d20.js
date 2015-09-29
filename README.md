@@ -54,7 +54,16 @@ d20.roll('2d8+1'); // roll two 8-sided dice and add 1 to the result
 d20.roll('1d8 +1 +2 -20'); // roll an 8-sided die with multiple modifiers
 ```
 
-You can get the result as an array of values rather than a single result if you pass `true` along as the second parameter. Note that the results will be sorted in ascending order except for the modifiers which will be in their order of apperance.
+You can get the result as an array of values rather than a single result if you use the `verboseRoll` function. Note that the results will be sorted in ascending order except for the modifiers which will be in their order of apperance.
+
+```javascript
+d20.verboseRoll(20);
+d20.verboseRoll('4d6);
+d20.verboseRoll('2d8+1');
+d20.verboseRoll('1d8 +1 +2 -20');
+```
+
+Alternatively you can just pass `true` as the second paramenter to the `roll` function.
 
 ```javascript
 d20.roll(20, true);

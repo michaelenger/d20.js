@@ -49,6 +49,11 @@
 		});
 
 		it('allows you to get all the dice rolls as output', function() {
+			var result = d20.verboseRoll('5d10');
+			expect(result.length).toBe(5);
+		});
+
+		it('allows you to get all the dice rolls as output (variant)', function() {
 			var result = d20.roll('5d10', true);
 			expect(result.length).toBe(5);
 		});
