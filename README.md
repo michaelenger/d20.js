@@ -58,7 +58,7 @@ You can get the result as an array of values rather than a single result if you 
 
 ```javascript
 d20.verboseRoll(20);
-d20.verboseRoll('4d6);
+d20.verboseRoll('4d6');
 d20.verboseRoll('2d8+1');
 d20.verboseRoll('1d8 +1 +2 -20');
 ```
