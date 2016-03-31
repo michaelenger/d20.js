@@ -76,7 +76,12 @@ var d20 = {
 		}
 
 		for (var i = 0; i < amount; i++) {
-			num = Math.floor(Math.random() * dice + 1);
+			/* We dont want to ruin verbose, so we dont skip the for loop */
+			if(dice !== 0){
+				num = Math.floor(Math.random() * dice + 1);
+			}else{
+				num = 0;
+			}
 			results.push(num);
 		}
 
