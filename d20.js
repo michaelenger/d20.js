@@ -75,6 +75,10 @@ var d20 = {
 			}
 		}
 
+		if (isNaN(dice)) {
+			return [];
+		}
+
 		for (var i = 0; i < amount; i++) {
 			/* We dont want to ruin verbose, so we dont skip the for loop */
 			if(dice !== 0){

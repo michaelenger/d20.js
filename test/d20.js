@@ -83,6 +83,16 @@
 				expect(result).toBeLessThan(8);
 			}
 		});
+
+		it('returns 0 if passed undescipherable text', function() {
+			var result = d20.roll('i can have a banana?');
+			expect(result).toBe(0);
+		});
+
+		it('returns empty array if passed undescipherable text', function() {
+			var result = d20.roll('did someone steal your sweetroll?', true);
+			expect(result.length).toBe(0);
+		});
 	});
 
 })();
