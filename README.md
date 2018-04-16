@@ -2,8 +2,8 @@
 
 Javascript library for rolling RPG dice. Supports dice notation such as "4d6" and "d20+2".
 
-[![npm version](http://img.shields.io/npm/v/d20.svg?style=flat)](https://npmjs.org/package/d20)
-[![Build Status](http://img.shields.io/travis/michaelenger/d20.js.svg?style=flat)](https://travis-ci.org/michaelenger/d20.js)
+[![npm version](https://img.shields.io/npm/v/d20.svg)](https://npmjs.org/package/d20)
+[![Build Status](https://api.travis-ci.org/michaelenger/d20.js.svg?branch=master)](https://travis-ci.org/michaelenger/d20.js)
 
 ## Installation
 
